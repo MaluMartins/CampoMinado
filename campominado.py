@@ -13,6 +13,7 @@ def criar_campo(x, y):
     return campo
 
 def imprime_campo(campo):
+    # mostrando campo na tela
     for i in range(len(campo)):
         for j in range(len(campo[0])):
             print(campo[i][j], end="")
@@ -21,16 +22,18 @@ def imprime_campo(campo):
 
         
 def criar_bombas(campo, n_bombas):
+    # "plantando" bombas em posições aleatórias
     random.seed()
 
     for i in range(n_bombas):
         a = random.randint(0, (len(campo)-1))
         b = random.randint(0, (len(campo[0])-1))
-        campo[a][b] = "#"
+        campo[a][b] = "#" 
                 
     return campo
 
 def imprime_campo_jogo(campo):
+    # imprimindo campo para o jogador (sem mostrar a localização das bombas)
     for i in range(len(campo)):
         for j in range(len(campo[0])):
             if campo[i][j] == "#":
